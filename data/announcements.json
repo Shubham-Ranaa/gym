@@ -1,16 +1,16 @@
 [
   {
-    "id": "ANN_MV3R2B9IRMQZ2K",
+    "id": "ANN_MV3VLCMN3IVY48",
     "title": "New Year, New You Challenge",
     "message": "Join our 30-day fitness challenge starting January 1st! Includes personalized workout plans, nutrition guidance, and weekly check-ins. Prizes for top participants!",
     "status": "published",
-    "publishedAt": "2026-10-11T17:08:33+05:30",
+    "publishedAt": "2026-10-11T19:15:20+05:30",
     "expiresAt": "2027-01-31T00:00:00+05:30",
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   },
   {
-    "id": "ANN_MV3R2B9JFBEPVJ",
+    "id": "ANN_MV3VLCMN19HHPO",
     "title": "Holiday Hours Notice",
     "message": "Please note our holiday hours: Dec 24 & 31: 5AM-3PM | Dec 25 & Jan 1: 8AM-6PM. Regular hours resume Jan 2nd.",
     "status": "published",
@@ -20,13 +20,13 @@
     "updatedAt": "2026-09-15T00:00:00+05:30"
   },
   {
-    "id": "ANN_MV3R2B9J3G989S",
+    "id": "ANN_MV3VLCMPXBFB03",
     "title": "Equipment Maintenance Schedule",
     "message": "Our cardio theater will be undergoing maintenance on Jan 15-17. Alternative cardio equipment will be available in the main floor during this time.",
     "status": "draft",
     "publishedAt": null,
     "expiresAt": null,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   }
 ]

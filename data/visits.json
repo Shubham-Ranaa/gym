@@ -1,9 +1,9 @@
 [
   {
-    "id": "VIS_MV3R2B94PDW6I3",
-    "memberId": "MEM_MV3R27D8F89PVZ",
-    "entryEventId": "EVT_MV3R2B94IUVM7V",
-    "exitEventId": "EVT_MV3R2B94KBH1JJ",
+    "id": "VIS_MV3VLCMEI8Y5PY",
+    "memberId": "MEM_MV3VL98QTIIBRW",
+    "entryEventId": "EVT_MV3VLCMEV6KJZ1",
+    "exitEventId": "EVT_MV3VLCMEYL0Q7P",
     "entryTimestamp": "2026-10-10T08:30:00+05:30",
     "exitTimestamp": "2026-10-10T11:45:00+05:30",
     "durationSeconds": 11700,
@@ -11,10 +11,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B94OJ3Z7M",
-    "memberId": "MEM_MV3R27D8F89PVZ",
-    "entryEventId": "EVT_MV3R2B95QX06BM",
-    "exitEventId": "EVT_MV3R2B9500CGIO",
+    "id": "VIS_MV3VLCMEZD21TT",
+    "memberId": "MEM_MV3VL98QTIIBRW",
+    "entryEventId": "EVT_MV3VLCMETMIQ4U",
+    "exitEventId": "EVT_MV3VLCME696TKJ",
     "entryTimestamp": "2026-10-04T17:00:00+05:30",
     "exitTimestamp": "2026-10-04T20:30:00+05:30",
     "durationSeconds": 12600,
@@ -22,10 +22,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B951AH0O8",
-    "memberId": "MEM_MV3R27UCYDYTWD",
-    "entryEventId": "EVT_MV3R2B95FY97WE",
-    "exitEventId": "EVT_MV3R2B951BSYKC",
+    "id": "VIS_MV3VLCME4KHXMI",
+    "memberId": "MEM_MV3VL9NWCGHVJM",
+    "entryEventId": "EVT_MV3VLCMENW8ZKW",
+    "exitEventId": "EVT_MV3VLCMEPI1TL6",
     "entryTimestamp": "2026-10-10T08:30:00+05:30",
     "exitTimestamp": "2026-10-10T11:45:00+05:30",
     "durationSeconds": 11700,
@@ -33,10 +33,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B959AT91T",
-    "memberId": "MEM_MV3R27UCYDYTWD",
-    "entryEventId": "EVT_MV3R2B95WGNXT1",
-    "exitEventId": "EVT_MV3R2B95LCM2CC",
+    "id": "VIS_MV3VLCMEYZ8W1Z",
+    "memberId": "MEM_MV3VL9NWCGHVJM",
+    "entryEventId": "EVT_MV3VLCME99A6KT",
+    "exitEventId": "EVT_MV3VLCMETN6F7I",
     "entryTimestamp": "2026-10-04T17:00:00+05:30",
     "exitTimestamp": "2026-10-04T20:30:00+05:30",
     "durationSeconds": 12600,
@@ -44,10 +44,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B95X7DRUI",
-    "memberId": "MEM_MV3R28AX331T24",
-    "entryEventId": "EVT_MV3R2B953ZNMV8",
-    "exitEventId": "EVT_MV3R2B95D3GSHO",
+    "id": "VIS_MV3VLCME5N4YH8",
+    "memberId": "MEM_MV3VLA5YMB58LF",
+    "entryEventId": "EVT_MV3VLCME4HXRAD",
+    "exitEventId": "EVT_MV3VLCME6VQNC1",
     "entryTimestamp": "2026-10-10T08:30:00+05:30",
     "exitTimestamp": "2026-10-10T11:45:00+05:30",
     "durationSeconds": 11700,
@@ -55,10 +55,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B95WT9HF1",
-    "memberId": "MEM_MV3R28AX331T24",
-    "entryEventId": "EVT_MV3R2B95LO678I",
-    "exitEventId": "EVT_MV3R2B95GHULG9",
+    "id": "VIS_MV3VLCMEBGII2Y",
+    "memberId": "MEM_MV3VLA5YMB58LF",
+    "entryEventId": "EVT_MV3VLCMEFY9MU4",
+    "exitEventId": "EVT_MV3VLCMEC5481E",
     "entryTimestamp": "2026-10-04T17:00:00+05:30",
     "exitTimestamp": "2026-10-04T20:30:00+05:30",
     "durationSeconds": 12600,
@@ -66,10 +66,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B9591GSHA",
-    "memberId": "MEM_MV3R28VF0WOLZX",
-    "entryEventId": "EVT_MV3R2B96I7I2PG",
-    "exitEventId": "EVT_MV3R2B96LOHIBW",
+    "id": "VIS_MV3VLCMECQGD8F",
+    "memberId": "MEM_MV3VLAKU1AERFN",
+    "entryEventId": "EVT_MV3VLCMER0VJUA",
+    "exitEventId": "EVT_MV3VLCMERVCRAX",
     "entryTimestamp": "2026-10-10T08:30:00+05:30",
     "exitTimestamp": "2026-10-10T11:45:00+05:30",
     "durationSeconds": 11700,
@@ -77,10 +77,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B96L1A693",
-    "memberId": "MEM_MV3R28VF0WOLZX",
-    "entryEventId": "EVT_MV3R2B96JRK50B",
-    "exitEventId": "EVT_MV3R2B96RPUB58",
+    "id": "VIS_MV3VLCMF6T208W",
+    "memberId": "MEM_MV3VLAKU1AERFN",
+    "entryEventId": "EVT_MV3VLCMFGF3EBK",
+    "exitEventId": "EVT_MV3VLCMF4Y2Y6S",
     "entryTimestamp": "2026-10-04T17:00:00+05:30",
     "exitTimestamp": "2026-10-04T20:30:00+05:30",
     "durationSeconds": 12600,
@@ -88,10 +88,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B96PNEMRP",
-    "memberId": "MEM_MV3R29SW6KONDL",
-    "entryEventId": "EVT_MV3R2B96U7RX5T",
-    "exitEventId": "EVT_MV3R2B96AGRHCX",
+    "id": "VIS_MV3VLCMFS42BH4",
+    "memberId": "MEM_MV3VLBG25MAZW4",
+    "entryEventId": "EVT_MV3VLCMF97KESG",
+    "exitEventId": "EVT_MV3VLCMFOH93S8",
     "entryTimestamp": "2026-10-10T08:30:00+05:30",
     "exitTimestamp": "2026-10-10T11:45:00+05:30",
     "durationSeconds": 11700,
@@ -99,10 +99,10 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B96PZPOZK",
-    "memberId": "MEM_MV3R29SW6KONDL",
-    "entryEventId": "EVT_MV3R2B967KQ407",
-    "exitEventId": "EVT_MV3R2B969QYECW",
+    "id": "VIS_MV3VLCMF961X6N",
+    "memberId": "MEM_MV3VLBG25MAZW4",
+    "entryEventId": "EVT_MV3VLCMFWSBBI4",
+    "exitEventId": "EVT_MV3VLCMFT06ZEO",
     "entryTimestamp": "2026-10-04T17:00:00+05:30",
     "exitTimestamp": "2026-10-04T20:30:00+05:30",
     "durationSeconds": 12600,
@@ -110,36 +110,14 @@
     "status": "COMPLETED"
   },
   {
-    "id": "VIS_MV3R2B967RBDXU",
-    "memberId": "MEM_MV3R27D8F89PVZ",
-    "entryEventId": "EVT_MV3R2B96TNUH86",
+    "id": "VIS_MV3VLCMF2GNA0Q",
+    "memberId": "MEM_MV3VL98QTIIBRW",
+    "entryEventId": "EVT_MV3VLCMFD1XL0L",
     "exitEventId": null,
     "entryTimestamp": "2026-10-11T09:15:00+05:30",
     "exitTimestamp": null,
     "durationSeconds": null,
     "gymLocalDate": "2026-10-11",
     "status": "OPEN"
-  },
-  {
-    "id": "VIS_MV3RK82JTJ6360",
-    "memberId": "MEM_MV3R27UCYDYTWD",
-    "entryEventId": "EVT_MV3RK82JCMJKDA",
-    "exitEventId": null,
-    "entryTimestamp": "2026-10-11T11:52:34.257Z",
-    "exitTimestamp": null,
-    "durationSeconds": null,
-    "gymLocalDate": "2026-10-11",
-    "status": "OPEN"
-  },
-  {
-    "id": "VIS_MV3S0Q1UFU0W30",
-    "memberId": "MEM_MV3R29SW6KONDL",
-    "entryEventId": "EVT_MV3S0Q1UVHL0DP",
-    "exitEventId": "EVT_MV3S0RSIH7Y41S",
-    "entryTimestamp": "2026-10-11T12:05:24.059Z",
-    "exitTimestamp": "2026-10-11T12:05:26.316Z",
-    "durationSeconds": 2,
-    "gymLocalDate": "2026-10-11",
-    "status": "COMPLETED"
   }
 ]

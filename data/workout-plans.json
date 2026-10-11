@@ -1,12 +1,12 @@
 [
   {
-    "id": "WP_MV3R2B9MQR9JO8",
+    "id": "WP_MV3VLCMRW3Q4K9",
     "name": "Beginner Strength Foundation",
     "description": "Perfect for those new to strength training or returning after a break. Focuses on proper form, basic movement patterns, and building a strong foundation.",
-    "trainerId": "TRAIN_MV3R27D61U88DG",
+    "trainerId": "TRAIN_MV3VL98O35SQAE",
     "memberIds": [
-      "MEM_MV3R27UCYDYTWD",
-      "MEM_MV3R28AX331T24"
+      "MEM_MV3VL9NWCGHVJM",
+      "MEM_MV3VLA5YMB58LF"
     ],
     "days": [
       {
@@ -14,7 +14,7 @@
         "name": "Upper Body Push",
         "exercises": [
           {
-            "id": "EX_MV3R2B9MI7RZSS",
+            "id": "EX_MV3VLCMR6KGCNT",
             "name": "Barbell Bench Press",
             "sets": 4,
             "reps": "8-10",
@@ -23,7 +23,7 @@
             "order": 1
           },
           {
-            "id": "EX_MV3R2B9MCPR4SH",
+            "id": "EX_MV3VLCMRU1VQ8O",
             "name": "Overhead Dumbbell Press",
             "sets": 3,
             "reps": "10-12",
@@ -32,7 +32,7 @@
             "order": 2
           },
           {
-            "id": "EX_MV3R2B9MFXL5YO",
+            "id": "EX_MV3VLCMR5HT8X4",
             "name": "Incline Push-ups",
             "sets": 3,
             "reps": "12-15",
@@ -41,7 +41,7 @@
             "order": 3
           },
           {
-            "id": "EX_MV3R2B9MPZO60G",
+            "id": "EX_MV3VLCMRZNRQ4V",
             "name": "Triceps Rope Pushdown",
             "sets": 3,
             "reps": "12-15",
@@ -56,7 +56,7 @@
         "name": "Lower Body & Core",
         "exercises": [
           {
-            "id": "EX_MV3R2B9MLFS2SO",
+            "id": "EX_MV3VLCMRQJHU5K",
             "name": "Goblet Squat",
             "sets": 4,
             "reps": "12-15",
@@ -65,7 +65,7 @@
             "order": 1
           },
           {
-            "id": "EX_MV3R2B9MOHTUI7",
+            "id": "EX_MV3VLCMRCMRGYJ",
             "name": "Romanian Deadlift",
             "sets": 3,
             "reps": "10-12",
@@ -74,7 +74,7 @@
             "order": 2
           },
           {
-            "id": "EX_MV3R2B9MEYROT0",
+            "id": "EX_MV3VLCMRNCWVFT",
             "name": "Leg Press",
             "sets": 3,
             "reps": "12-15",
@@ -83,7 +83,7 @@
             "order": 3
           },
           {
-            "id": "EX_MV3R2B9MJBD2W4",
+            "id": "EX_MV3VLCMRAJE7BA",
             "name": "Plank",
             "sets": 3,
             "reps": "30-45s",
@@ -92,7 +92,7 @@
             "order": 4
           },
           {
-            "id": "EX_MV3R2B9MTXVCLJ",
+            "id": "EX_MV3VLCMRUHKS00",
             "name": "Russian Twists",
             "sets": 3,
             "reps": "20/side",
@@ -107,7 +107,7 @@
         "name": "Upper Body Pull",
         "exercises": [
           {
-            "id": "EX_MV3R2B9MORP6T3",
+            "id": "EX_MV3VLCMRSV067T",
             "name": "Pull-ups",
             "sets": 4,
             "reps": "AMRAP",
@@ -116,7 +116,7 @@
             "order": 1
           },
           {
-            "id": "EX_MV3R2B9M4QLU8G",
+            "id": "EX_MV3VLCMRJWG7DH",
             "name": "Seated Cable Row",
             "sets": 3,
             "reps": "10-12",
@@ -125,7 +125,7 @@
             "order": 2
           },
           {
-            "id": "EX_MV3R2B9MQNQPX0",
+            "id": "EX_MV3VLCMRC3UNBA",
             "name": "Face Pulls",
             "sets": 3,
             "reps": "15-20",
@@ -134,7 +134,7 @@
             "order": 3
           },
           {
-            "id": "EX_MV3R2B9M39MPNI",
+            "id": "EX_MV3VLCMRGP1WB7",
             "name": "Biceps Curl",
             "sets": 3,
             "reps": "12-15",
@@ -146,16 +146,16 @@
       }
     ],
     "isActive": true,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   },
   {
-    "id": "WP_MV3R2B9MTB4LLT",
+    "id": "WP_MV3VLCMR9GD8SX",
     "name": "HIIT Fat Loss Program",
     "description": "High-intensity interval training designed for maximum calorie burn and cardiovascular improvement. Scalable for all fitness levels.",
-    "trainerId": "TRAIN_MV3R27D6CA5BGB",
+    "trainerId": "TRAIN_MV3VL98OVREJ9E",
     "memberIds": [
-      "MEM_MV3R28VF0WOLZX"
+      "MEM_MV3VLAKU1AERFN"
     ],
     "days": [
       {
@@ -163,7 +163,7 @@
         "name": "Circuit Training",
         "exercises": [
           {
-            "id": "EX_MV3R2B9MFSPQ8Z",
+            "id": "EX_MV3VLCMR8GZE0C",
             "name": "Kettlebell Swings",
             "sets": 4,
             "reps": "20",
@@ -172,7 +172,7 @@
             "order": 1
           },
           {
-            "id": "EX_MV3R2B9MVZRY1B",
+            "id": "EX_MV3VLCMR36CBTI",
             "name": "Burpees",
             "sets": 4,
             "reps": "10",
@@ -181,7 +181,7 @@
             "order": 2
           },
           {
-            "id": "EX_MV3R2B9MG3TOX7",
+            "id": "EX_MV3VLCMRDAZ2F5",
             "name": "Box Jumps",
             "sets": 4,
             "reps": "12",
@@ -190,7 +190,7 @@
             "order": 3
           },
           {
-            "id": "EX_MV3R2B9MVAD1HX",
+            "id": "EX_MV3VLCMRHVTWQY",
             "name": "Battle Ropes",
             "sets": 4,
             "reps": "30s",
@@ -205,7 +205,7 @@
         "name": "Sprint Intervals",
         "exercises": [
           {
-            "id": "EX_MV3R2B9M7VJHZ6",
+            "id": "EX_MV3VLCMRHPK9M6",
             "name": "Treadmill Sprints",
             "sets": 8,
             "reps": "30s",
@@ -214,7 +214,7 @@
             "order": 1
           },
           {
-            "id": "EX_MV3R2B9MFSNJC1",
+            "id": "EX_MV3VLCMRVVNQJH",
             "name": "Sled Push",
             "sets": 6,
             "reps": "25m",
@@ -223,7 +223,7 @@
             "order": 2
           },
           {
-            "id": "EX_MV3R2B9MNF5ZO0",
+            "id": "EX_MV3VLCMR20RNVP",
             "name": "Jump Rope",
             "sets": 6,
             "reps": "60s",
@@ -232,7 +232,7 @@
             "order": 3
           },
           {
-            "id": "EX_MV3R2B9MPH7OZU",
+            "id": "EX_MV3VLCMRHRDYIX",
             "name": "Farmer's Carry",
             "sets": 6,
             "reps": "30m",
@@ -244,7 +244,7 @@
       }
     ],
     "isActive": true,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   }
 ]

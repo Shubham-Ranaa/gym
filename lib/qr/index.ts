@@ -1,13 +1,31 @@
 import QRCode from 'qrcode';
 import { settingsRepository } from '@/lib/repository';
 
+/**
+ * Normalises a configured base URL into the fixed check-in destination.
+ *
+ * Handles trailing slashes, a base URL that already points at /check-in, and
+ * accidental double slashes, so the QR code always resolves to exactly one
+ * /check-in path.
+ */
+function buildCheckInUrl(rawUrl: string): string {
+  let url = rawUrl.trim().replace(/\/+$/, '');
+  
+  // Already points at the check-in page - do not append it twice
+  if (url.endsWith('/check-in')) return url;
+  
+  return `${url}/check-in`;
+}
+
 export async function generateGymQRCode(): Promise<{
   dataUrl: string;
   svg: string;
   checkInUrl: string;
 }> {
   const settings = await settingsRepository.find();
-  const appUrl = settings?.appUrl || process.env.APP_URL;
+  // The configured environment variable wins so a redeploy cannot leave a
+  // stale domain baked into stored settings.
+  const appUrl = process.env.APP_URL || settings?.appUrl;
   
   if (!appUrl) {
     throw new Error(
@@ -15,7 +33,7 @@ export async function generateGymQRCode(): Promise<{
     );
   }
   
-  const checkInUrl = `${appUrl.replace(/\/+$/, '')}/check-in`;
+  const checkInUrl = buildCheckInUrl(appUrl);
   
   const options: QRCode.QRCodeToStringOptions = {
     type: 'svg',

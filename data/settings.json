@@ -42,11 +42,11 @@
         "closed": false
       }
     },
-    "appUrl": "http://localhost:3000",
+    "appUrl": "https://gym-jbwi.onrender.com",
     "membershipSettings": {
       "allowSelfRegistration": true,
       "requireApproval": true,
-      "defaultPlanId": "PLAN_MV3R27CTJ4K10V",
+      "defaultPlanId": "PLAN_MV3VL98CB0U5VM",
       "gracePeriodDays": 7
     },
     "attendanceSettings": {
@@ -54,6 +54,6 @@
       "allowManualCorrection": true,
       "requireExitConfirmation": false
     },
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   }
 ]

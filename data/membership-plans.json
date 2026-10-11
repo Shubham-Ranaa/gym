@@ -1,6 +1,6 @@
 [
   {
-    "id": "PLAN_MV3R27CTJ4K10V",
+    "id": "PLAN_MV3VL98CB0U5VM",
     "name": "Monthly Flex",
     "price": 2999,
     "durationDays": 30,
@@ -13,11 +13,11 @@
       "2 Guest Passes/Month"
     ],
     "isActive": true,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   },
   {
-    "id": "PLAN_MV3R27CT02DELL",
+    "id": "PLAN_MV3VL98C8PGYGF",
     "name": "Quarterly Power",
     "price": 7999,
     "durationDays": 90,
@@ -30,11 +30,11 @@
       "Workout Program Library"
     ],
     "isActive": true,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   },
   {
-    "id": "PLAN_MV3R27CTA0DBQ3",
+    "id": "PLAN_MV3VL98CSZHQUN",
     "name": "Half-Yearly Pro",
     "price": 14999,
     "durationDays": 180,
@@ -48,11 +48,11 @@
       "Advanced Recovery Access"
     ],
     "isActive": true,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   },
   {
-    "id": "PLAN_MV3R27CTM8VH8B",
+    "id": "PLAN_MV3VL98CDZT2CB",
     "name": "Yearly Elite",
     "price": 26999,
     "durationDays": 365,
@@ -68,7 +68,7 @@
       "2 Weeks Freeze/Year"
     ],
     "isActive": true,
-    "createdAt": "2026-10-11T17:08:33+05:30",
-    "updatedAt": "2026-10-11T17:08:33+05:30"
+    "createdAt": "2026-10-11T19:15:20+05:30",
+    "updatedAt": "2026-10-11T19:15:20+05:30"
   }
 ]
