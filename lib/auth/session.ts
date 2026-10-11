@@ -7,13 +7,16 @@ const SESSION_SECRET = new TextEncoder().encode(
 );
 
 const SESSION_COOKIE_NAME = 'gym-session';
-const SESSION_MAX_AGE = 60 * 60 * 24 * 7; // 7 days
+// Sessions are intentionally long-lived: a member logs in once and stays
+// signed in on that device until they explicitly log out.
+const SESSION_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+const SESSION_EXPIRY = '30d';
 
 export async function createSession(user: SessionUser): Promise<string> {
   const token = await new SignJWT({ ...user })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
-    .setExpirationTime('7d')
+    .setExpirationTime(SESSION_EXPIRY)
     .sign(SESSION_SECRET);
   
   return token;

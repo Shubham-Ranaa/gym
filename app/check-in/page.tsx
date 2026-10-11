@@ -1,19 +1,21 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { Dumbbell, LogIn, User, Clock, CheckCircle, XCircle, AlertCircle, Loader2, ArrowRight, DoorOpen, DoorClosed } from 'lucide-react';
-import toast from 'react-hot-toast';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import {
+  Dumbbell, Clock, CheckCircle, XCircle, AlertCircle, Loader2,
+  DoorOpen, DoorClosed, ScanLine, ShieldAlert, RefreshCw, ArrowRight,
+} from 'lucide-react';
 
 interface AttendanceStatus {
   isInside: boolean;
-  currentVisit: { entryTimestamp: string; visitId: string } | null;
+  currentVisit: { entryTimestamp: string; gymLocalDate: string } | null;
   todayEvents: { type: string; timestamp: string }[];
   completedToday: boolean;
   lastEntry: string | null;
@@ -24,48 +26,52 @@ interface CheckInResult {
   success: boolean;
   message: string;
   errorCode?: string;
-  event?: { timestamp: string };
-  visit?: { durationSeconds: number };
+  event?: { type: string; timestamp: string };
+  visit?: { status: string; durationSeconds: number | null; entryTimestamp: string };
 }
 
+type Phase = 'scanning' | 'entry' | 'exit' | 'rejected' | 'ineligible' | 'error';
+
+const INELIGIBLE: Record<string, string> = {
+  MEMBER_NOT_APPROVED: 'Your membership is pending approval. Please contact the front desk.',
+  MEMBER_INACTIVE: 'Your membership is not active. Please contact the front desk.',
+  MEMBERSHIP_EXPIRED: 'Your membership has expired. Please renew to continue.',
+  MEMBERSHIP_INVALID: 'No valid membership plan is assigned. Please contact the front desk.',
+};
+
 export default function CheckInPage() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/member';
-  
   const [status, setStatus] = useState<AttendanceStatus | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [submitting, setSubmitting] = useState(false);
+  const [phase, setPhase] = useState<Phase>('scanning');
   const [result, setResult] = useState<CheckInResult | null>(null);
-  const [memberName, setMemberName] = useState('');
+  
+  // Guards against the effect firing twice (React StrictMode / fast refresh)
+  const submitted = useRef(false);
+  const reduce = useReducedMotion();
   
   useEffect(() => {
-    fetchStatus();
+    if (submitted.current) return;
+    submitted.current = true;
+    runScan();
   }, []);
   
-  const fetchStatus = async () => {
+  async function runScan() {
+    setPhase('scanning');
+    
     try {
-      const res = await fetch('/api/attendance/status');
-      if (res.ok) {
-        const data = await res.json();
+      // Load current state first so the UI can greet by name
+      const statusRes = await fetch('/api/attendance/status');
+      if (statusRes.ok) {
+        const data = await statusRes.json();
         setStatus(data);
-        if (data.currentVisit) {
-          setMemberName(data.currentVisit.entryTimestamp ? 'Member' : '');
-        }
-      } else if (res.status === 401) {
-        router.push(`/login?callbackUrl=/check-in`);
       }
     } catch {
-      toast.error('Failed to load attendance status');
-    } finally {
-      setLoading(false);
+      // Non-fatal: the POST below is the authoritative action
     }
-  };
-  
-  const handleCheckIn = async () => {
-    setSubmitting(true);
-    setResult(null);
     
+    await submitAttendance();
+  }
+  
+  async function submitAttendance() {
     try {
       const res = await fetch('/api/attendance/check-in', {
         method: 'POST',
@@ -76,212 +82,270 @@ export default function CheckInPage() {
       setResult(data);
       
       if (data.success) {
-        toast.success(data.message);
-        fetchStatus();
-      } else {
-        toast.error(data.message);
+        const type = data.event?.type || (status?.isInside ? 'EXIT' : 'ENTRY');
+        setPhase(type === 'EXIT' ? 'exit' : 'entry');
+        // Refresh status so a subsequent scan in the same session is correct
+        const refreshed = await fetch('/api/attendance/status');
+        if (refreshed.ok) setStatus(await refreshed.json());
+        return;
       }
+      
+      if (data.errorCode && INELIGIBLE[data.errorCode]) {
+        setPhase('ineligible');
+        return;
+      }
+      
+      setPhase('rejected');
     } catch {
-      toast.error('Something went wrong. Please try again.');
-      setResult({ success: false, message: 'Network error. Please try again.', errorCode: 'NETWORK_ERROR' });
-    } finally {
-      setSubmitting(false);
+      setPhase('error');
     }
-  };
-  
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-brand-bg">
-        <Navbar />
-        <div className="flex flex-col items-center gap-4">
-          <Loader2 className="h-12 w-12 text-brand-accent animate-spin" />
-          <p className="text-brand-textMuted">Loading attendance status...</p>
-        </div>
-        <Footer />
-      </div>
-    );
   }
   
-  const isInside = status?.isInside || false;
-  const completedToday = status?.completedToday || false;
-  const currentVisit = status?.currentVisit;
-  const lastEntry = status?.lastEntry;
-  const lastExit = status?.lastExit;
+  const memberGreeting = status?.isInside ? 'Checked Out' : status?.completedToday ? 'Completed Today' : 'Checked In';
   
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="pt-16 flex-1 flex items-center justify-center py-12 px-4">
+      <main className="flex-1 flex items-center justify-center pt-24 pb-12 px-4">
         <div className="w-full max-w-md">
+          {/* Brand */}
           <div className="text-center mb-8">
-            <Link href="/" className="inline-flex items-center gap-2 mb-6">
+            <Link href="/" className="inline-flex items-center gap-2" aria-label="FitForge Home">
               <Dumbbell className="h-10 w-10 text-brand-accent" />
               <span className="text-2xl font-bold text-brand-text">FitForge</span>
             </Link>
-            <h1 className="text-3xl font-extrabold text-brand-text mb-2">Gym Check-In</h1>
-            <p className="text-brand-textMuted">Scan, confirm, train. Simple as that.</p>
           </div>
           
-          {result && (
-            <Card className="mb-6" style={{ borderColor: result.success ? 'rgba(34, 197, 94, 0.5)' : 'rgba(239, 68, 68, 0.5)' }}>
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${result.success ? 'bg-brand-successBg text-brand-success' : 'bg-brand-errorBg text-brand-error'}`}>
-                    {result.success ? <CheckCircle className="h-5 w-5" /> : <XCircle className="h-5 w-5" />}
-                  </div>
-                  <div className="flex-1">
-                    <p className={`font-medium ${result.success ? 'text-brand-success' : 'text-brand-error'}`}>
-                      {result.success ? 'Success!' : 'Unable to Check In'}
-                    </p>
-                    <p className="text-brand-textMuted text-sm mt-1">{result.message}</p>
-                    {result.visit?.durationSeconds && (
-                      <p className="text-brand-accent text-sm font-medium mt-2">
-                        Visit duration: {Math.floor(result.visit.durationSeconds / 60)}m {result.visit.durationSeconds % 60}s
+          <AnimatePresence mode="wait">
+            {/* ---------- SCANNING ---------- */}
+            {phase === 'scanning' && (
+              <motion.div
+                key="scanning"
+                initial={reduce ? undefined : { opacity: 0, scale: 0.96 }}
+                animate={reduce ? undefined : { opacity: 1, scale: 1 }}
+                exit={reduce ? undefined : { opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+              >
+                <Card>
+                  <CardContent className="p-8 flex flex-col items-center text-center gap-6">
+                    <div className="relative w-28 h-28 flex items-center justify-center">
+                      <span className="absolute inset-0 rounded-full border-2 border-brand-accent/20" />
+                      {!reduce && (
+                        <>
+                          <motion.span
+                            className="absolute inset-0 rounded-full border-2 border-brand-accent"
+                            animate={{ scale: [1, 1.35], opacity: [0.6, 0] }}
+                            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
+                          />
+                          <motion.span
+                            className="absolute inset-0 rounded-full border-2 border-brand-accent"
+                            animate={{ scale: [1, 1.35], opacity: [0.6, 0] }}
+                            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut', delay: 0.8 }}
+                          />
+                        </>
+                      )}
+                      <ScanLine className="h-12 w-12 text-brand-accent" />
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-extrabold text-brand-text">Scanning</h1>
+                      <p className="text-brand-textMuted mt-2">Recording your attendance...</p>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-brand-textDim">
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      Please stay on this screen
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+            
+            {/* ---------- SUCCESS: ENTRY / EXIT ---------- */}
+            {(phase === 'entry' || phase === 'exit') && (
+              <motion.div
+                key={phase === 'entry' ? 'entry' : 'exit'}
+                initial={reduce ? undefined : { opacity: 0, scale: 0.9, y: 12 }}
+                animate={reduce ? undefined : { opacity: 1, scale: 1, y: 0 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+              >
+                <Card
+                  className={
+                    phase === 'entry'
+                      ? 'border-brand-success/40 ring-1 ring-brand-success/20'
+                      : 'border-brand-accent/40 ring-1 ring-brand-accent/20'
+                  }
+                >
+                  <CardContent className="p-8 flex flex-col items-center text-center gap-5">
+                    <motion.div
+                      className={`w-24 h-24 rounded-full flex items-center justify-center ${
+                        phase === 'entry' ? 'bg-brand-successBg text-brand-success' : 'bg-brand-accentBg text-brand-accent'
+                      }`}
+                      initial={reduce ? undefined : { scale: 0.4, rotate: -25 }}
+                      animate={reduce ? undefined : { scale: 1, rotate: 0 }}
+                      transition={{ type: 'spring', stiffness: 300, damping: 16, delay: 0.08 }}
+                    >
+                      {phase === 'entry' ? <DoorOpen className="h-12 w-12" /> : <DoorClosed className="h-12 w-12" />}
+                    </motion.div>
+                    
+                    <div>
+                      <motion.h1
+                        className={`text-3xl font-extrabold tracking-tight ${
+                          phase === 'entry' ? 'text-brand-success' : 'text-brand-accent'
+                        }`}
+                        initial={reduce ? undefined : { opacity: 0, y: 8 }}
+                        animate={reduce ? undefined : { opacity: 1, y: 0 }}
+                        transition={{ delay: 0.18 }}
+                      >
+                        {memberGreeting}
+                      </motion.h1>
+                      <p className="text-brand-textMuted mt-2">
+                        {phase === 'entry'
+                          ? `You are now inside the gym`
+                          : `Your visit has been recorded`}
                       </p>
-                    )}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                    </div>
+                    
+                    <div className="w-full space-y-2">
+                      <div className="flex items-center justify-between p-3 bg-brand-surface border border-brand-border rounded-xl text-sm">
+                        <span className="text-brand-textMuted">
+                          {phase === 'entry' ? 'Entry time' : 'Exit time'}
+                        </span>
+                        <span className="font-medium text-brand-text">
+                          {result?.event?.timestamp
+                            ? new Date(result.event.timestamp).toLocaleTimeString('en-IN', {
+                                hour: '2-digit',
+                                minute: '2-digit',
+                                hour12: true,
+                              })
+                            : '--'}
+                        </span>
+                      </div>
+                      {phase === 'exit' && result?.visit?.durationSeconds != null && (
+                        <div className="flex items-center justify-between p-3 bg-brand-surface border border-brand-border rounded-xl text-sm">
+                          <span className="text-brand-textMuted">Duration</span>
+                          <span className="font-medium text-brand-accent">
+                            {Math.floor(result.visit.durationSeconds / 60)}m {result.visit.durationSeconds % 60}s
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    
+                    <Badge variant={phase === 'entry' ? 'success' : 'info'} className="self-center">
+                      {phase === 'entry' ? 'ENTRY RECORDED' : 'EXIT RECORDED'}
+                    </Badge>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+            
+            {/* ---------- REJECTED (3rd scan) ---------- */}
+            {phase === 'rejected' && (
+              <motion.div
+                key="rejected"
+                initial={reduce ? undefined : { opacity: 0, scale: 0.94 }}
+                animate={reduce ? undefined : { opacity: 1, scale: 1 }}
+                transition={{ type: 'spring', stiffness: 240, damping: 20 }}
+              >
+                <Card className="border-brand-warning/40 ring-1 ring-brand-warning/20">
+                  <CardContent className="p-8 flex flex-col items-center text-center gap-5">
+                    <motion.div
+                      className="w-24 h-24 rounded-full bg-brand-warningBg text-brand-warning flex items-center justify-center"
+                      animate={reduce ? undefined : { rotate: [0, -8, 8, -8, 0] }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <AlertCircle className="h-12 w-12" />
+                    </motion.div>
+                    <div>
+                      <h1 className="text-2xl font-extrabold text-brand-warning">Already Completed</h1>
+                      <p className="text-brand-textMuted mt-2">{result?.message}</p>
+                    </div>
+                    <div className="w-full p-3 bg-brand-surface border border-brand-border rounded-xl text-sm text-brand-textMuted">
+                      You have already completed your gym attendance for today. You can check in again tomorrow.
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+            
+            {/* ---------- INELIGIBLE ---------- */}
+            {phase === 'ineligible' && (
+              <motion.div
+                key="ineligible"
+                initial={reduce ? undefined : { opacity: 0, scale: 0.94 }}
+                animate={reduce ? undefined : { opacity: 1, scale: 1 }}
+                transition={{ duration: 0.25 }}
+              >
+                <Card className="border-brand-error/40 ring-1 ring-brand-error/20">
+                  <CardContent className="p-8 flex flex-col items-center text-center gap-5">
+                    <div className="w-24 h-24 rounded-full bg-brand-errorBg text-brand-error flex items-center justify-center">
+                      <ShieldAlert className="h-12 w-12" />
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-extrabold text-brand-error">Cannot Check In</h1>
+                      <p className="text-brand-textMuted mt-2">
+                        {result?.errorCode
+                          ? INELIGIBLE[result.errorCode]
+                          : 'Your membership is not eligible for check-in.'}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+            
+            {/* ---------- ERROR ---------- */}
+            {phase === 'error' && (
+              <motion.div
+                key="error"
+                initial={reduce ? undefined : { opacity: 0, scale: 0.94 }}
+                animate={reduce ? undefined : { opacity: 1, scale: 1 }}
+                transition={{ duration: 0.25 }}
+              >
+                <Card className="border-brand-border">
+                  <CardContent className="p-8 flex flex-col items-center text-center gap-5">
+                    <div className="w-24 h-24 rounded-full bg-brand-border text-brand-textMuted flex items-center justify-center">
+                      <XCircle className="h-12 w-12" />
+                    </div>
+                    <div>
+                      <h1 className="text-2xl font-extrabold text-brand-text">Connection Problem</h1>
+                      <p className="text-brand-textMuted mt-2">
+                        We could not reach the server. Please check your connection and try again.
+                      </p>
+                    </div>
+                    <Button onClick={() => { submitted.current = false; runScan(); }} className="gap-2">
+                      <RefreshCw className="h-4 w-4" />
+                      Try Again
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          
+          {/* Persistent guidance so a member scanning repeatedly understands the rule */}
+          {phase !== 'scanning' && (
+            <div className="mt-6 grid grid-cols-3 gap-2">
+              <div className="p-2.5 bg-brand-surface border border-brand-border rounded-xl text-center">
+                <div className="text-[10px] uppercase tracking-wider text-brand-textDim">1st scan</div>
+                <div className="text-xs font-semibold text-brand-success">Check In</div>
+              </div>
+              <div className="p-2.5 bg-brand-surface border border-brand-border rounded-xl text-center">
+                <div className="text-[10px] uppercase tracking-wider text-brand-textDim">2nd scan</div>
+                <div className="text-xs font-semibold text-brand-warning">Check Out</div>
+              </div>
+              <div className="p-2.5 bg-brand-surface border border-brand-border rounded-xl text-center">
+                <div className="text-[10px] uppercase tracking-wider text-brand-textDim">3rd scan</div>
+                <div className="text-xs font-semibold text-brand-error">Invalid</div>
+              </div>
+            </div>
           )}
           
-          <Card>
-            <CardHeader>
-              <CardTitle>How This QR Code Works</CardTitle>
-            </CardHeader>
-            <CardContent className="pt-0">
-              <div className="grid grid-cols-3 gap-2 mb-4">
-                <div className="p-3 bg-brand-surface border border-brand-border rounded-xl text-center">
-                  <div className="text-xs text-brand-textDim mb-1">1st scan</div>
-                  <div className="font-medium text-brand-success text-sm">Check In</div>
-                </div>
-                <div className="p-3 bg-brand-surface border border-brand-border rounded-xl text-center">
-                  <div className="text-xs text-brand-textDim mb-1">2nd scan</div>
-                  <div className="font-medium text-brand-warning text-sm">Check Out</div>
-                </div>
-                <div className="p-3 bg-brand-surface border border-brand-border rounded-xl text-center">
-                  <div className="text-xs text-brand-textDim mb-1">3rd scan</div>
-                  <div className="font-medium text-brand-error text-sm">Invalid</div>
-                </div>
-              </div>
-              <p className="text-sm text-brand-textMuted">
-                One QR code at the gym entrance for everyone. The server decides what each
-                scan does from your attendance record: the first scan records your entry, the
-                second records your exit, and further scans the same day are rejected.
-              </p>
-            </CardContent>
-          </Card>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle>Attendance Status</CardTitle>
-            </CardHeader>
-            <CardContent className="pt-0 space-y-6">
-              <div className="text-center py-4">
-                <div className={`w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center ${isInside ? 'bg-brand-successBg' : completedToday ? 'bg-brand-warningBg' : 'bg-brand-accentBg'}`}>
-                  {isInside ? (
-                    <DoorOpen className="h-10 w-10 text-brand-success" />
-                  ) : completedToday ? (
-                    <CheckCircle className="h-10 w-10 text-brand-warning" />
-                  ) : (
-                    <DoorClosed className="h-10 w-10 text-brand-accent" />
-                  )}
-                </div>
-                <div className={`text-2xl font-bold ${isInside ? 'text-brand-success' : completedToday ? 'text-brand-warning' : 'text-brand-accent'}`}>
-                  {isInside ? 'Checked In' : completedToday ? 'Completed Today' : 'Ready to Check In'}
-                </div>
-                <p className="text-brand-textMuted mt-1">
-                  {isInside ? `Inside since ${lastEntry ? new Date(lastEntry).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : 'now'}` : completedToday ? 'You\'ve completed your visit for today' : 'Tap the button below to start your workout'}
-                </p>
-              </div>
-              
-              {currentVisit && (
-                <div className="p-4 bg-brand-surface border border-brand-border rounded-xl">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-brand-text">Current Visit</span>
-                    <Badge variant="success">Active</Badge>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-brand-textMuted">
-                    <Clock className="h-4 w-4" />
-                    <span>Entry: {new Date(currentVisit.entryTimestamp).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', day: 'numeric', month: 'short' })}</span>
-                  </div>
-                </div>
-              )}
-              
-              {(lastEntry || lastExit) && (
-                <div className="grid grid-cols-2 gap-4">
-                  {lastEntry && (
-                    <div className="p-4 bg-brand-surface border border-brand-border rounded-xl text-center">
-                      <div className="flex items-center justify-center gap-1 text-sm text-brand-textMuted mb-1">
-                        <DoorOpen className="h-4 w-4" />
-                        <span>Last Entry</span>
-                      </div>
-                      <div className="font-medium text-brand-text">{new Date(lastEntry).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</div>
-                      <div className="text-xs text-brand-textDim">{new Date(lastEntry).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</div>
-                    </div>
-                  )}
-                  {lastExit && (
-                    <div className="p-4 bg-brand-surface border border-brand-border rounded-xl text-center">
-                      <div className="flex items-center justify-center gap-1 text-sm text-brand-textMuted mb-1">
-                        <DoorClosed className="h-4 w-4" />
-                        <span>Last Exit</span>
-                      </div>
-                      <div className="font-medium text-brand-text">{new Date(lastExit).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })}</div>
-                      <div className="text-xs text-brand-textDim">{new Date(lastExit).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })}</div>
-                    </div>
-                  )}
-                </div>
-              )}
-              
-              {completedToday && (
-                <div className="p-4 bg-brand-warningBg/50 border border-brand-warning/30 rounded-xl">
-                  <div className="flex items-center gap-2 text-brand-warning mb-2">
-                    <AlertCircle className="h-5 w-5" />
-                    <span className="font-medium">Attendance Complete</span>
-                  </div>
-                  <p className="text-brand-textMuted text-sm">You have already checked in and out today. You can check in again tomorrow.</p>
-                </div>
-              )}
-              
-              {/* The server decides ENTRY vs EXIT from the member's current
-                  server-side state, so the button stays enabled while inside. */}
-              {!completedToday && (
-                <Button
-                  onClick={handleCheckIn}
-                  disabled={submitting}
-                  className="w-full"
-                  size="lg"
-                  loading={submitting}
-                  variant={isInside ? 'secondary' : 'primary'}
-                >
-                  {isInside ? (
-                    <>
-                      <DoorClosed className="h-5 w-5" />
-                      Check Out
-                    </>
-                  ) : (
-                    <>
-                      <DoorOpen className="h-5 w-5" />
-                      Check In
-                    </>
-                  )}
-                </Button>
-              )}
-              
-              <div className="pt-4 border-t border-brand-border">
-                <Link href={callbackUrl} className="flex items-center justify-center gap-2 text-brand-accent hover:text-brand-accentHover font-medium text-sm">
-                  <ArrowRight className="h-4 w-4" />
-                  Go to Member Dashboard
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-          
-          <p className="text-center text-brand-textDim text-xs mt-6">
-            Demo mode: This records attendance to the shared JSON database. 
-            <br />Admin can view all check-ins at <code className="text-brand-textMuted">/admin/attendance</code>
-          </p>
+          <div className="mt-6 text-center">
+            <Link href="/member" className="inline-flex items-center gap-1.5 text-sm text-brand-textMuted hover:text-brand-accent transition-colors">
+              Go to Member Dashboard
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </div>
         </div>
       </main>
       
