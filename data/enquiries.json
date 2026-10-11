@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ENQ_MV3R2B9DZSELPY",
+    "name": "Michael Chen",
+    "email": "michael.chen@email.com",
+    "phone": "+1 (555) 111-2222",
+    "subject": "Membership Inquiry",
+    "message": "Hello, I'm interested in joining your gym. Could you please provide more information about your membership options and pricing?",
+    "status": "new",
+    "notes": "",
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  },
+  {
+    "id": "ENQ_MV3R2B9E59LMCO",
+    "name": "Jessica Lee",
+    "email": "jessica.lee@email.com",
+    "phone": "+1 (555) 222-3333",
+    "subject": "Personal Training",
+    "message": "I'm looking for a personal trainer to help me with weight loss and strength training. Do you offer introductory packages?",
+    "status": "contacted",
+    "notes": "Called back on 2026-10-10. Interested in 3-month package.",
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T05:08:38+05:30"
+  },
+  {
+    "id": "ENQ_MV3R2B9E6JNYO5",
+    "name": "Robert Kim",
+    "email": "robert.kim@email.com",
+    "phone": "+1 (555) 333-4444",
+    "subject": "Facility Tour",
+    "message": "I would like to schedule a tour of your facility. I work nearby and am considering switching gyms.",
+    "status": "new",
+    "notes": "",
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  },
+  {
+    "id": "ENQ_MV3R2B9EZGHA26",
+    "name": "Amanda Rodriguez",
+    "email": "amanda.rodriguez@email.com",
+    "phone": "+1 (555) 444-5555",
+    "subject": "Group Classes",
+    "message": "What types of group classes do you offer? Are they included in all memberships?",
+    "status": "converted",
+    "notes": "Converted to member on 2026-10-09. Assigned to member ID: MEM_MV3R28VF0WOLZX",
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-10T17:08:38+05:30"
+  }
+]

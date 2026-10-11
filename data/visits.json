@@ -1,0 +1,145 @@
+[
+  {
+    "id": "VIS_MV3R2B94PDW6I3",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "entryEventId": "EVT_MV3R2B94IUVM7V",
+    "exitEventId": "EVT_MV3R2B94KBH1JJ",
+    "entryTimestamp": "2026-10-10T08:30:00+05:30",
+    "exitTimestamp": "2026-10-10T11:45:00+05:30",
+    "durationSeconds": 11700,
+    "gymLocalDate": "2026-10-10",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B94OJ3Z7M",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "entryEventId": "EVT_MV3R2B95QX06BM",
+    "exitEventId": "EVT_MV3R2B9500CGIO",
+    "entryTimestamp": "2026-10-04T17:00:00+05:30",
+    "exitTimestamp": "2026-10-04T20:30:00+05:30",
+    "durationSeconds": 12600,
+    "gymLocalDate": "2026-10-04",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B951AH0O8",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "entryEventId": "EVT_MV3R2B95FY97WE",
+    "exitEventId": "EVT_MV3R2B951BSYKC",
+    "entryTimestamp": "2026-10-10T08:30:00+05:30",
+    "exitTimestamp": "2026-10-10T11:45:00+05:30",
+    "durationSeconds": 11700,
+    "gymLocalDate": "2026-10-10",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B959AT91T",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "entryEventId": "EVT_MV3R2B95WGNXT1",
+    "exitEventId": "EVT_MV3R2B95LCM2CC",
+    "entryTimestamp": "2026-10-04T17:00:00+05:30",
+    "exitTimestamp": "2026-10-04T20:30:00+05:30",
+    "durationSeconds": 12600,
+    "gymLocalDate": "2026-10-04",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B95X7DRUI",
+    "memberId": "MEM_MV3R28AX331T24",
+    "entryEventId": "EVT_MV3R2B953ZNMV8",
+    "exitEventId": "EVT_MV3R2B95D3GSHO",
+    "entryTimestamp": "2026-10-10T08:30:00+05:30",
+    "exitTimestamp": "2026-10-10T11:45:00+05:30",
+    "durationSeconds": 11700,
+    "gymLocalDate": "2026-10-10",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B95WT9HF1",
+    "memberId": "MEM_MV3R28AX331T24",
+    "entryEventId": "EVT_MV3R2B95LO678I",
+    "exitEventId": "EVT_MV3R2B95GHULG9",
+    "entryTimestamp": "2026-10-04T17:00:00+05:30",
+    "exitTimestamp": "2026-10-04T20:30:00+05:30",
+    "durationSeconds": 12600,
+    "gymLocalDate": "2026-10-04",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B9591GSHA",
+    "memberId": "MEM_MV3R28VF0WOLZX",
+    "entryEventId": "EVT_MV3R2B96I7I2PG",
+    "exitEventId": "EVT_MV3R2B96LOHIBW",
+    "entryTimestamp": "2026-10-10T08:30:00+05:30",
+    "exitTimestamp": "2026-10-10T11:45:00+05:30",
+    "durationSeconds": 11700,
+    "gymLocalDate": "2026-10-10",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B96L1A693",
+    "memberId": "MEM_MV3R28VF0WOLZX",
+    "entryEventId": "EVT_MV3R2B96JRK50B",
+    "exitEventId": "EVT_MV3R2B96RPUB58",
+    "entryTimestamp": "2026-10-04T17:00:00+05:30",
+    "exitTimestamp": "2026-10-04T20:30:00+05:30",
+    "durationSeconds": 12600,
+    "gymLocalDate": "2026-10-04",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B96PNEMRP",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "entryEventId": "EVT_MV3R2B96U7RX5T",
+    "exitEventId": "EVT_MV3R2B96AGRHCX",
+    "entryTimestamp": "2026-10-10T08:30:00+05:30",
+    "exitTimestamp": "2026-10-10T11:45:00+05:30",
+    "durationSeconds": 11700,
+    "gymLocalDate": "2026-10-10",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B96PZPOZK",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "entryEventId": "EVT_MV3R2B967KQ407",
+    "exitEventId": "EVT_MV3R2B969QYECW",
+    "entryTimestamp": "2026-10-04T17:00:00+05:30",
+    "exitTimestamp": "2026-10-04T20:30:00+05:30",
+    "durationSeconds": 12600,
+    "gymLocalDate": "2026-10-04",
+    "status": "COMPLETED"
+  },
+  {
+    "id": "VIS_MV3R2B967RBDXU",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "entryEventId": "EVT_MV3R2B96TNUH86",
+    "exitEventId": null,
+    "entryTimestamp": "2026-10-11T09:15:00+05:30",
+    "exitTimestamp": null,
+    "durationSeconds": null,
+    "gymLocalDate": "2026-10-11",
+    "status": "OPEN"
+  },
+  {
+    "id": "VIS_MV3RK82JTJ6360",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "entryEventId": "EVT_MV3RK82JCMJKDA",
+    "exitEventId": null,
+    "entryTimestamp": "2026-10-11T11:52:34.257Z",
+    "exitTimestamp": null,
+    "durationSeconds": null,
+    "gymLocalDate": "2026-10-11",
+    "status": "OPEN"
+  },
+  {
+    "id": "VIS_MV3S0Q1UFU0W30",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "entryEventId": "EVT_MV3S0Q1UVHL0DP",
+    "exitEventId": "EVT_MV3S0RSIH7Y41S",
+    "entryTimestamp": "2026-10-11T12:05:24.059Z",
+    "exitTimestamp": "2026-10-11T12:05:26.316Z",
+    "durationSeconds": 2,
+    "gymLocalDate": "2026-10-11",
+    "status": "COMPLETED"
+  }
+]

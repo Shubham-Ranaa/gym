@@ -84,7 +84,6 @@ Icon
 
 # Files to ignore in git
 /cache/
-/data/
 /.secret
 
 # Next.js

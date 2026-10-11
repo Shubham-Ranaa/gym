@@ -1,0 +1,74 @@
+[
+  {
+    "id": "PLAN_MV3R27CTJ4K10V",
+    "name": "Monthly Flex",
+    "price": 2999,
+    "durationDays": 30,
+    "benefits": [
+      "24/7 Gym Access",
+      "All Group Classes Included",
+      "Free Fitness Assessment",
+      "Locker Room Access",
+      "Mobile App Access",
+      "2 Guest Passes/Month"
+    ],
+    "isActive": true,
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  },
+  {
+    "id": "PLAN_MV3R27CT02DELL",
+    "name": "Quarterly Power",
+    "price": 7999,
+    "durationDays": 90,
+    "benefits": [
+      "Everything in Monthly Flex",
+      "Priority Class Booking",
+      "Body Composition Scan (Quarterly)",
+      "4 Guest Passes/Month",
+      "Nutrition Guide Access",
+      "Workout Program Library"
+    ],
+    "isActive": true,
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  },
+  {
+    "id": "PLAN_MV3R27CTA0DBQ3",
+    "name": "Half-Yearly Pro",
+    "price": 14999,
+    "durationDays": 180,
+    "benefits": [
+      "Everything in Quarterly Power",
+      "1 Personal Training Session/Month",
+      "Monthly Body Composition Scan",
+      "Custom Workout Program",
+      "6 Guest Passes/Month",
+      "Monthly Nutrition Check-in",
+      "Advanced Recovery Access"
+    ],
+    "isActive": true,
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  },
+  {
+    "id": "PLAN_MV3R27CTM8VH8B",
+    "name": "Yearly Elite",
+    "price": 26999,
+    "durationDays": 365,
+    "benefits": [
+      "Everything in Half-Yearly Pro",
+      "2 Personal Training Sessions/Month",
+      "Bi-weekly Body Composition Scans",
+      "Unlimited Nutrition Coaching",
+      "Unlimited Guest Passes",
+      "Quarterly Metabolic Testing",
+      "Competition Prep Support",
+      "Exclusive Member Events",
+      "2 Weeks Freeze/Year"
+    ],
+    "isActive": true,
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  }
+]

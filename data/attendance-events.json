@@ -1,0 +1,218 @@
+[
+  {
+    "id": "EVT_MV3R2B94IUVM7V",
+    "visitId": "VIS_MV3R2B94PDW6I3",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "type": "ENTRY",
+    "timestamp": "2026-10-10T08:30:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T08:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B94KBH1JJ",
+    "visitId": "VIS_MV3R2B94PDW6I3",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "type": "EXIT",
+    "timestamp": "2026-10-10T11:45:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T11:45:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95QX06BM",
+    "visitId": "VIS_MV3R2B94OJ3Z7M",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "type": "ENTRY",
+    "timestamp": "2026-10-04T17:00:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T17:00:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B9500CGIO",
+    "visitId": "VIS_MV3R2B94OJ3Z7M",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "type": "EXIT",
+    "timestamp": "2026-10-04T20:30:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T20:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95FY97WE",
+    "visitId": "VIS_MV3R2B951AH0O8",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "type": "ENTRY",
+    "timestamp": "2026-10-10T08:30:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T08:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B951BSYKC",
+    "visitId": "VIS_MV3R2B951AH0O8",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "type": "EXIT",
+    "timestamp": "2026-10-10T11:45:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T11:45:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95WGNXT1",
+    "visitId": "VIS_MV3R2B959AT91T",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "type": "ENTRY",
+    "timestamp": "2026-10-04T17:00:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T17:00:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95LCM2CC",
+    "visitId": "VIS_MV3R2B959AT91T",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "type": "EXIT",
+    "timestamp": "2026-10-04T20:30:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T20:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B953ZNMV8",
+    "visitId": "VIS_MV3R2B95X7DRUI",
+    "memberId": "MEM_MV3R28AX331T24",
+    "type": "ENTRY",
+    "timestamp": "2026-10-10T08:30:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T08:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95D3GSHO",
+    "visitId": "VIS_MV3R2B95X7DRUI",
+    "memberId": "MEM_MV3R28AX331T24",
+    "type": "EXIT",
+    "timestamp": "2026-10-10T11:45:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T11:45:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95LO678I",
+    "visitId": "VIS_MV3R2B95WT9HF1",
+    "memberId": "MEM_MV3R28AX331T24",
+    "type": "ENTRY",
+    "timestamp": "2026-10-04T17:00:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T17:00:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B95GHULG9",
+    "visitId": "VIS_MV3R2B95WT9HF1",
+    "memberId": "MEM_MV3R28AX331T24",
+    "type": "EXIT",
+    "timestamp": "2026-10-04T20:30:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T20:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96I7I2PG",
+    "visitId": "VIS_MV3R2B9591GSHA",
+    "memberId": "MEM_MV3R28VF0WOLZX",
+    "type": "ENTRY",
+    "timestamp": "2026-10-10T08:30:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T08:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96LOHIBW",
+    "visitId": "VIS_MV3R2B9591GSHA",
+    "memberId": "MEM_MV3R28VF0WOLZX",
+    "type": "EXIT",
+    "timestamp": "2026-10-10T11:45:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T11:45:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96JRK50B",
+    "visitId": "VIS_MV3R2B96L1A693",
+    "memberId": "MEM_MV3R28VF0WOLZX",
+    "type": "ENTRY",
+    "timestamp": "2026-10-04T17:00:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T17:00:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96RPUB58",
+    "visitId": "VIS_MV3R2B96L1A693",
+    "memberId": "MEM_MV3R28VF0WOLZX",
+    "type": "EXIT",
+    "timestamp": "2026-10-04T20:30:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T20:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96U7RX5T",
+    "visitId": "VIS_MV3R2B96PNEMRP",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "type": "ENTRY",
+    "timestamp": "2026-10-10T08:30:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T08:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96AGRHCX",
+    "visitId": "VIS_MV3R2B96PNEMRP",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "type": "EXIT",
+    "timestamp": "2026-10-10T11:45:00+05:30",
+    "gymLocalDate": "2026-10-10",
+    "createdAt": "2026-10-10T11:45:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B967KQ407",
+    "visitId": "VIS_MV3R2B96PZPOZK",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "type": "ENTRY",
+    "timestamp": "2026-10-04T17:00:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T17:00:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B969QYECW",
+    "visitId": "VIS_MV3R2B96PZPOZK",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "type": "EXIT",
+    "timestamp": "2026-10-04T20:30:00+05:30",
+    "gymLocalDate": "2026-10-04",
+    "createdAt": "2026-10-04T20:30:00+05:30"
+  },
+  {
+    "id": "EVT_MV3R2B96TNUH86",
+    "visitId": "VIS_MV3R2B967RBDXU",
+    "memberId": "MEM_MV3R27D8F89PVZ",
+    "type": "ENTRY",
+    "timestamp": "2026-10-11T09:15:00+05:30",
+    "gymLocalDate": "2026-10-11",
+    "createdAt": "2026-10-11T09:15:00+05:30"
+  },
+  {
+    "id": "EVT_MV3RK82JCMJKDA",
+    "visitId": "VIS_MV3RK82JTJ6360",
+    "memberId": "MEM_MV3R27UCYDYTWD",
+    "type": "ENTRY",
+    "timestamp": "2026-10-11T11:52:34.257Z",
+    "gymLocalDate": "2026-10-11",
+    "createdAt": "2026-10-11T11:52:34.257Z"
+  },
+  {
+    "id": "EVT_MV3S0Q1UVHL0DP",
+    "visitId": "VIS_MV3S0Q1UFU0W30",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "type": "ENTRY",
+    "timestamp": "2026-10-11T12:05:24.059Z",
+    "gymLocalDate": "2026-10-11",
+    "createdAt": "2026-10-11T12:05:24.059Z"
+  },
+  {
+    "id": "EVT_MV3S0RSIH7Y41S",
+    "visitId": "VIS_MV3S0Q1UFU0W30",
+    "memberId": "MEM_MV3R29SW6KONDL",
+    "type": "EXIT",
+    "timestamp": "2026-10-11T12:05:26.316Z",
+    "gymLocalDate": "2026-10-11",
+    "createdAt": "2026-10-11T12:05:26.316Z"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "AUD_MV3RK82VZMKHUZ",
+    "entityType": "visit",
+    "entityId": "VIS_MV3RK82JTJ6360",
+    "action": "ENTRY_RECORDED",
+    "performedBy": "MEM_MV3R27UCYDYTWD",
+    "performedByRole": "member",
+    "previousData": null,
+    "newData": {
+      "visitId": "VIS_MV3RK82JTJ6360",
+      "entryTime": "2026-10-11T11:52:34.257Z"
+    },
+    "reason": null,
+    "timestamp": "2026-10-11T11:52:34.279Z"
+  },
+  {
+    "id": "AUD_MV3S0Q2LVJOR4M",
+    "entityType": "visit",
+    "entityId": "VIS_MV3S0Q1UFU0W30",
+    "action": "ENTRY_RECORDED",
+    "performedBy": "MEM_MV3R29SW6KONDL",
+    "performedByRole": "member",
+    "previousData": null,
+    "newData": {
+      "visitId": "VIS_MV3S0Q1UFU0W30",
+      "entryTime": "2026-10-11T12:05:24.059Z"
+    },
+    "reason": null,
+    "timestamp": "2026-10-11T12:05:24.093Z"
+  },
+  {
+    "id": "AUD_MV3S0RSZFRM42W",
+    "entityType": "visit",
+    "entityId": "VIS_MV3S0Q1UFU0W30",
+    "action": "EXIT_RECORDED",
+    "performedBy": "MEM_MV3R29SW6KONDL",
+    "performedByRole": "member",
+    "previousData": {
+      "status": "OPEN"
+    },
+    "newData": {
+      "status": "COMPLETED",
+      "exitTime": "2026-10-11T12:05:26.316Z",
+      "durationSeconds": 2
+    },
+    "reason": null,
+    "timestamp": "2026-10-11T12:05:26.339Z"
+  },
+  {
+    "id": "AUD_MV3S0RWMH5WRAY",
+    "entityType": "visit",
+    "entityId": "MEM_MV3R29SW6KONDL",
+    "action": "ATTENDANCE_REJECTED",
+    "performedBy": "MEM_MV3R29SW6KONDL",
+    "performedByRole": "member",
+    "previousData": null,
+    "newData": null,
+    "reason": "Member attempted an attendance action after completing attendance for the day",
+    "timestamp": "2026-10-11T12:05:26.470Z"
+  }
+]

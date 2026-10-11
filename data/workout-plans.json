@@ -1,0 +1,250 @@
+[
+  {
+    "id": "WP_MV3R2B9MQR9JO8",
+    "name": "Beginner Strength Foundation",
+    "description": "Perfect for those new to strength training or returning after a break. Focuses on proper form, basic movement patterns, and building a strong foundation.",
+    "trainerId": "TRAIN_MV3R27D61U88DG",
+    "memberIds": [
+      "MEM_MV3R27UCYDYTWD",
+      "MEM_MV3R28AX331T24"
+    ],
+    "days": [
+      {
+        "day": 1,
+        "name": "Upper Body Push",
+        "exercises": [
+          {
+            "id": "EX_MV3R2B9MI7RZSS",
+            "name": "Barbell Bench Press",
+            "sets": 4,
+            "reps": "8-10",
+            "restSeconds": 90,
+            "instructions": "Focus on controlled movement, touch chest lightly",
+            "order": 1
+          },
+          {
+            "id": "EX_MV3R2B9MCPR4SH",
+            "name": "Overhead Dumbbell Press",
+            "sets": 3,
+            "reps": "10-12",
+            "restSeconds": 75,
+            "instructions": "Keep core tight, avoid arching back",
+            "order": 2
+          },
+          {
+            "id": "EX_MV3R2B9MFXL5YO",
+            "name": "Incline Push-ups",
+            "sets": 3,
+            "reps": "12-15",
+            "restSeconds": 60,
+            "instructions": "Hands on bench, body straight",
+            "order": 3
+          },
+          {
+            "id": "EX_MV3R2B9MPZO60G",
+            "name": "Triceps Rope Pushdown",
+            "sets": 3,
+            "reps": "12-15",
+            "restSeconds": 60,
+            "instructions": "Elbows tucked, full extension",
+            "order": 4
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "name": "Lower Body & Core",
+        "exercises": [
+          {
+            "id": "EX_MV3R2B9MLFS2SO",
+            "name": "Goblet Squat",
+            "sets": 4,
+            "reps": "12-15",
+            "restSeconds": 90,
+            "instructions": "Chest up, knees out, full depth",
+            "order": 1
+          },
+          {
+            "id": "EX_MV3R2B9MOHTUI7",
+            "name": "Romanian Deadlift",
+            "sets": 3,
+            "reps": "10-12",
+            "restSeconds": 90,
+            "instructions": "Hinge at hips, slight knee bend",
+            "order": 2
+          },
+          {
+            "id": "EX_MV3R2B9MEYROT0",
+            "name": "Leg Press",
+            "sets": 3,
+            "reps": "12-15",
+            "restSeconds": 75,
+            "instructions": "Feet shoulder-width, controlled motion",
+            "order": 3
+          },
+          {
+            "id": "EX_MV3R2B9MJBD2W4",
+            "name": "Plank",
+            "sets": 3,
+            "reps": "30-45s",
+            "restSeconds": 60,
+            "instructions": "Straight line from head to heels",
+            "order": 4
+          },
+          {
+            "id": "EX_MV3R2B9MTXVCLJ",
+            "name": "Russian Twists",
+            "sets": 3,
+            "reps": "20/side",
+            "restSeconds": 45,
+            "instructions": "Feet off ground, touch floor each side",
+            "order": 5
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "name": "Upper Body Pull",
+        "exercises": [
+          {
+            "id": "EX_MV3R2B9MORP6T3",
+            "name": "Pull-ups",
+            "sets": 4,
+            "reps": "AMRAP",
+            "restSeconds": 90,
+            "instructions": "Use band if needed, full range of motion",
+            "order": 1
+          },
+          {
+            "id": "EX_MV3R2B9M4QLU8G",
+            "name": "Seated Cable Row",
+            "sets": 3,
+            "reps": "10-12",
+            "restSeconds": 75,
+            "instructions": "Squeeze shoulder blades, neutral grip",
+            "order": 2
+          },
+          {
+            "id": "EX_MV3R2B9MQNQPX0",
+            "name": "Face Pulls",
+            "sets": 3,
+            "reps": "15-20",
+            "restSeconds": 60,
+            "instructions": "High elbows, external rotation",
+            "order": 3
+          },
+          {
+            "id": "EX_MV3R2B9M39MPNI",
+            "name": "Biceps Curl",
+            "sets": 3,
+            "reps": "12-15",
+            "restSeconds": 60,
+            "instructions": "Supinated grip, no swinging",
+            "order": 4
+          }
+        ]
+      }
+    ],
+    "isActive": true,
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  },
+  {
+    "id": "WP_MV3R2B9MTB4LLT",
+    "name": "HIIT Fat Loss Program",
+    "description": "High-intensity interval training designed for maximum calorie burn and cardiovascular improvement. Scalable for all fitness levels.",
+    "trainerId": "TRAIN_MV3R27D6CA5BGB",
+    "memberIds": [
+      "MEM_MV3R28VF0WOLZX"
+    ],
+    "days": [
+      {
+        "day": 1,
+        "name": "Circuit Training",
+        "exercises": [
+          {
+            "id": "EX_MV3R2B9MFSPQ8Z",
+            "name": "Kettlebell Swings",
+            "sets": 4,
+            "reps": "20",
+            "restSeconds": 45,
+            "instructions": "Hip hinge movement, explode up",
+            "order": 1
+          },
+          {
+            "id": "EX_MV3R2B9MVZRY1B",
+            "name": "Burpees",
+            "sets": 4,
+            "reps": "10",
+            "restSeconds": 60,
+            "instructions": "Chest to ground, jump up",
+            "order": 2
+          },
+          {
+            "id": "EX_MV3R2B9MG3TOX7",
+            "name": "Box Jumps",
+            "sets": 4,
+            "reps": "12",
+            "restSeconds": 60,
+            "instructions": "Soft landing, step down",
+            "order": 3
+          },
+          {
+            "id": "EX_MV3R2B9MVAD1HX",
+            "name": "Battle Ropes",
+            "sets": 4,
+            "reps": "30s",
+            "restSeconds": 60,
+            "instructions": "Alternating waves, fight the rope",
+            "order": 4
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "name": "Sprint Intervals",
+        "exercises": [
+          {
+            "id": "EX_MV3R2B9M7VJHZ6",
+            "name": "Treadmill Sprints",
+            "sets": 8,
+            "reps": "30s",
+            "restSeconds": 90,
+            "instructions": "90% effort, walk recovery",
+            "order": 1
+          },
+          {
+            "id": "EX_MV3R2B9MFSNJC1",
+            "name": "Sled Push",
+            "sets": 6,
+            "reps": "25m",
+            "restSeconds": 120,
+            "instructions": "Light weight, fast pace",
+            "order": 2
+          },
+          {
+            "id": "EX_MV3R2B9MNF5ZO0",
+            "name": "Jump Rope",
+            "sets": 6,
+            "reps": "60s",
+            "restSeconds": 60,
+            "instructions": "Double unders if possible",
+            "order": 3
+          },
+          {
+            "id": "EX_MV3R2B9MPH7OZU",
+            "name": "Farmer's Carry",
+            "sets": 6,
+            "reps": "30m",
+            "restSeconds": 90,
+            "instructions": "Heavy weights, walk tall",
+            "order": 4
+          }
+        ]
+      }
+    ],
+    "isActive": true,
+    "createdAt": "2026-10-11T17:08:33+05:30",
+    "updatedAt": "2026-10-11T17:08:33+05:30"
+  }
+]
