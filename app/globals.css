@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+  }
+  
+  * {
+    @apply border-brand-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans bg-brand-bg text-brand-text antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section {
+    @apply py-16 sm:py-24 lg:py-32;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-accent to-brand-accentHover;
+  }
+  
+  .glass {
+    @apply bg-brand-surface/50 backdrop-blur-sm border border-brand-border/50;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:border-brand-borderHover hover:shadow-card-hover;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-brand-bg bg-brand-accent rounded-xl
+           hover:bg-brand-accentHover active:bg-brand-accentDim
+           focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 focus:ring-offset-brand-bg
+           disabled:opacity-50 disabled:cursor-not-allowed
+           transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-brand-text bg-brand-surface border border-brand-border rounded-xl
+           hover:bg-brand-surfaceHover hover:border-brand-borderHover
+           focus:outline-none focus:ring-2 focus:ring-brand-accent focus:ring-offset-2 focus:ring-offset-brand-bg
+           disabled:opacity-50 disabled:cursor-not-allowed
+           transition-all duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-brand-surface border border-brand-border text-brand-text placeholder-brand-textDim rounded-xl
+           focus:outline-none focus:ring-2 focus:ring-brand-accent/20 focus:border-brand-accent
+           disabled:opacity-50 disabled:cursor-not-allowed
+           transition-all duration-200;
+  }
+  
+  .label-field {
+    @apply block text-sm font-medium text-brand-text mb-2;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 text-sm font-medium rounded-full;
+  }
+  
+  .badge-success {
+    @apply badge bg-brand-successBg text-brand-success border border-brand-success/30;
+  }
+  
+  .badge-warning {
+    @apply badge bg-brand-warningBg text-brand-warning border border-brand-warning/30;
+  }
+  
+  .badge-error {
+    @apply badge bg-brand-errorBg text-brand-error border border-brand-error/30;
+  }
+  
+  .badge-info {
+    @apply badge bg-brand-accentBg text-brand-accent border border-brand-accent/30;
+  }
+  
+  .link {
+    @apply text-brand-accent hover:text-brand-accentHover transition-colors font-medium;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
